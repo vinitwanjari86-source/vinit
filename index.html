@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just For You Bhumi</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      font-family: "Poppins", sans-serif;
+      position: relative;
+    }
+
+    /* FULL SCREEN BACKGROUND */
+    .space-bg{
+      position:fixed;
+      inset:0;
+      background:#000;
+      z-index:-3;
+    }
+
+    /* EARTH ROTATING */
+    .earth {
+      position: fixed;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      width: 100vmin;
+      height: 100vmin;
+      background-image: url("world.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      animation: spinEarth 25s linear infinite;
+      z-index: -1;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+
+    @keyframes spinEarth {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* MOON (BOTTOM, STABLE, CORRECT ORIENTATION) */
+    .moon-surface{
+      position:fixed;
+      bottom:0;
+      left:50%;
+      transform:translateX(-50%) scaleY(1); /* ensure normal orientation */
+      width:140%;
+      height:40vh;
+      background-image: url("images/m2.jpg");
+      background-size:cover;
+      background-position:center bottom;
+      z-index:-2;
+      box-shadow:0 -80px 120px rgba(0,0,0,0.7) inset;
+    }
+
+    /* Floating animated hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: #ff70a6;
+      font-size: 22px;
+      animation: floatUp 7s linear infinite;
+      opacity: 0.7;
+      z-index: 5;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.4); opacity: 0; }
+    }
+
+    /* Main text */
+    .title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      animation: glow 2s infinite alternate;
+      z-index: 10;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff5ea8; }
+      to { text-shadow: 0 0 25px #ff197a; }
+    }
+
+    /* Button */
+    .btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      font-size: 18px;
+      background: #ff2d76;
+      border: none;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.25s;
+      z-index: 10;
+    }
+
+    .btn:hover {
+      transform: scale(1.07);
+      background: #ff0059;
+      box-shadow: 0 0 12px #ff0059;
+    }
+
+    .center-box {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FULL SCREEN SPACE -->
+  <div class="space-bg"></div>
+
+  <!-- ROTATING EARTH -->
+  <div class="earth"></div>
+
+  <!-- STABLE MOON SURFACE -->
+  <div class="moon-surface"></div>
+
+  <!-- Floating hearts -->
+  <div id="hearts"></div>
+
+  <div class="center-box">
+    <div class="title">This is just for you, Bhumi 💖</div>
+
+    <button class="btn" onclick="playAndGo()">Tap Here</button>
+  </div>
+
+  <audio id="mySong" src="song.mp3.mpeg"></audio>
+
+  <script>
+    function playAndGo() {
+      let song = document.getElementById("mySong");
+      song.play();
+
+      setTimeout(() => {
+        window.location.href = "v.html";
+      }, 800);
+    }
+
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.innerHTML = "💗";
+      heart.classList.add("heart");
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = 20 + Math.random() * 20 + "px";
+      heart.style.animationDuration = 5 + Math.random() * 4 + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 8000);
+    }, 500);
+  </script>
+
+</body>
+</html>
