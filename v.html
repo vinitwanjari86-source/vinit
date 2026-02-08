@@ -4,261 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="viewport" content="width=1024">
-
   <title>My Proposal - For You</title>
-
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
   <!-- JS -->
   <script src="main.js" defer></script>
-  
-  <style>
-    /* Full screen cinematic setup */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      scroll-behavior: smooth; /* Smooth scroll animation */
-    }
-
-    body {
-      background: linear-gradient(135deg, #ffe6f0 0%, #e6f7ff 100%); /* Soft gradient background */
-      font-family: Arial, sans-serif;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #bgCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.1; /* Subtle cinematic effect */
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      flex: 1;
-      position: relative;
-    }
-
-    /* Cinematic fade-in animations on scroll */
-    section {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-
-    section.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Soft gradients for sections */
-    header {
-      background: linear-gradient(135deg, #ffcccc 0%, #ffe6cc 100%);
-      padding: 50px 20px;
-      text-align: center;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .about-section {
-      background: linear-gradient(135deg, #e6f7ff 0%, #cceeff 100%);
-      padding: 40px 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .points-section {
-      background: linear-gradient(135deg, #fff0f6 0%, #ffe6f0 100%);
-      padding: 40px 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .emotional-section {
-      background: linear-gradient(135deg, #f0e6ff 0%, #e6ccff 100%);
-      padding: 40px 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .final-proposal {
-      background: linear-gradient(135deg, #ffe6cc 0%, #ffcccc 100%);
-      padding: 40px 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    /* Additional styles for cinematic feel */
-    .hero-text h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
-      font-size: 1.2em;
-    }
-
-    /* Hearts container for romantic effect */
-    #hearts-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    /* Button styles */
-    .btn {
-      background: linear-gradient(135deg, #ff4d7e 0%, #ff6b9d 100%);
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      margin: 10px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 1.2em;
-      transition: transform 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-  </style>
 </head>
-
 <body>
-  
   <!-- Add this inside <body> at the very top -->
-  <canvas id="bgCanvas"></canvas>
+<canvas id="bgCanvas"></canvas>
 
-  <div id="hearts-container"></div>
+
+<div id="hearts-container"></div>
 
   <main class="container">
-    <br>
+<br>
     <!-- Background Music -->
     <audio id="song" src="song.mp3.mpeg" autoplay loop></audio>
+<!-- Hero Section -->
+<header>
+  <img src="image.jpeg" alt="Romantic flowers and book" />
+  <div class="hero-text">
+    <h1>Your Presence Has Become My Favourite Place.<br>
+    I don’t know how or when... but you became the most beautiful part of my life.</h1>
 
-    <!-- Hero Section -->
-    <header>
-      <img src="image.jpeg" alt="Romantic flowers and book" />
-      <div class="hero-text">
-        <h1>Your Presence Has Become My Favourite Place.<br>
-        I don’t know how or when... but you became the most beautiful part of my life.</h1>
+    <p>
+      This isn’t a promise, it’s just the truth—<br>
+      I admire you, the way you smile, the kindness in your eyes,<br>
+      and the softness in the way you exist.
+    </p>
+  </div>
+</header>
 
-        <p>
-          This isn’t a promise, it’s just the truth—<br>
-          I admire you, the way you smile, the kindness in your eyes,<br>
-          and the softness in the way you exist.
-        </p>
-      </div>
-    </header>
-    <br>
+<br>
     <!-- About Her Section -->
-    <section class="about-section">
+<section class="about-section">
+  <!-- ROW 1: LEFT IMAGE + RIGHT ENGLISH TEXT -->
+  <div class="row">
+      <img src="b3.jpeg" class="side-img">
+  <div class="text-block">
+      <h2>Why You Mean So Much To Me</h2>
+      <p>
+        You may not realize it, but you have a way of making ordinary days feel special.<br>
+        Your smile… your eyes… your voice ... the way you talk…<br>
+        everything about you has a gentleness that I can’t ignore.<br>
+        This is not some big promise—just my genuine feeling:<br><br>
+        <strong>You matter to me. More than I ever expected.</strong>
+      </p>
+  </div>
 
-      <!-- ROW 1: LEFT IMAGE + RIGHT ENGLISH TEXT -->
-      <div class="row">
-          <img src="b3.jpeg" class="side-img">
+  </div>
+  <!-- ROW 2: LEFT MARATHI + RIGHT IMAGE -->
+  <div class="row">
+      <div class="text-block">
+          <p>
+            Jevha Pahilyanda mi tula pahilan hota, to divas aaj hi mala agadi athavato.
+            Tya divashi me tujhya sundar dodhyanch kautuk kala hoto ani apan na frankfinn institute
+            madhe english cha kahi gosthinvar bolat hoto.<br>
+            Tu majhya shejari basali hotis… ani khar sagau tar, mala tula baghun tevhacha tujhyavara prem jhal hot.
+            Aaj Paryant mala kadat nahi ki majhya manatlya feelings tula kas sangu…
+            pratyekvedi me tula pahato tevha, mala phakta tula pahatach rahav vatay…<br>
+            he prem ahe ki pagalpan… mahit nahi,
+            pan je kahi ahe… te phakta tujhyasathich ahe.
+            Tujhyavar kelal prem aajvar kunavar hi kel nahi.
+            Tu majhya sobat rahili, tar ek divas aapn lagna hi karu…
+            Aani jeevnatil pratyek yashachi unchi 
+            tujhya hatat hath gheun pahu.<br>
+            Me khar sangto… me nehmi tujhya pathishi ubha rahin,
+            nehmi tujha satha dein, kay hi pn jhala tari phakta tulach nivden.<br>
+        Tuch ti aahes jila me prem karato…..❤️
+      </p>
+  </div>
 
-          <div class="text-block">
-              <h2>Why You Mean So Much To Me</h2>
-              <p>
-                You may not realize it, but you have a way of making ordinary days feel special.<br>
-                Your smile… your eyes… your voice ... the way you talk…<br>
-                everything about you has a gentleness that I can’t ignore.<br>
-                This is not some big promise—just my genuine feeling:<br><br>
-                <strong>You matter to me. More than I ever expected.</strong>
-              </p>
-          </div>
-      </div>
+  <img src="img2.jpeg" class="side-img">
 
-      <!-- ROW 2: LEFT MARATHI + RIGHT IMAGE -->
-      <div class="row">
-          <div class="text-block">
-              <p>
-                Jevha Pahilyanda mi tula pahilan hota, to divas aaj hi mala agadi athavato.
-                Tya divashi me tujhya sundar dodhyanch kautuk kala hoto ani apan na frankfinn institute
-                madhe english cha kahi gosthinvar bolat hoto.<br>
-                Tu majhya shejari basali hotis… ani khar sagau tar, mala tula baghun tevhacha tujhyavara prem jhal hot.
-                Aaj Paryant mala kadat nahi ki majhya manatlya feelings tula kas sangu…
-                pratyekvedi me tula pahato tevha, mala phakta tula pahatach rahav vatay…<br>
-                he prem ahe ki pagalpan… mahit nahi,
-                pan je kahi ahe… te phakta tujhyasathich ahe.
-                Tujhyavar kelal prem aajvar kunavar hi kel nahi.
-                Tu majhya sobat rahili, tar ek divas aapn lagna hi karu…
-                Aani jeevnatil pratyek yashachi unchi 
-                tujhya hatat hath gheun pahu.<br>
-                Me khar sangto… me nehmi tujhya pathishi ubha rahin,
-                nehmi tujha satha dein, kay hi pn jhala tari phakta tulach nivden.<br>
-
-                Tuch ti aahes jila me prem karato…..❤️
-              </p>
-          </div>
-
-          <img src="img2.jpeg" class="side-img">
-      </div>
-
-    </section>
-
-    <br>
+  </div>
+</section>
+<br>
     <!-- Points Section -->
     <section class="points-section">
       <h2>What I Feel About You</h2>
+  <div class="point">
+    <strong>1. Your Smile</strong><br>
+    Your smile doesn’t just look good… it feels like peace.<br/>
+    A kind of happiness I never want to lose
+  </div>
 
-      <div class="point">
-        <strong>1. Your Smile</strong><br>
-        Your smile doesn’t just look good… it feels like peace.<br/>
-        A kind of happiness I never want to lose
-      </div>
+  <div class="point">
+    <strong>2. Your Eyes</strong><br>
+    There's Something in your eyes - soft, warm, and honest.<br/>
 
-      <div class="point">
-        <strong>2. Your Eyes</strong><br>
-        There's Something in your eyes - soft, warm, and honest.<br/>
 Like they speak a language only the heart understands.
-      </div>
+</div>
 
-      <div class="point">
-        <strong>3. Your Nature</strong><br>
-        The way you treat people, the kindness you carry....<br/>
-        It's one of the biggest reasons why you became my favourite.
-      </div>
 
-      <div class="point">
-        <strong>4. Your Presence</strong><br>
-        Even when you don't say anything,<br/>
-        your presence feels like comfort<br/>
-        like things will be okay
-      </div>
+  <div class="point">
+    <strong>3. Your Nature</strong><br>
+    The way you treat people, the kindness you carry....<br/>
+    It's one of the biggest reasons why you became my favourite.
+  </div>
 
-      <div class="highlight-box">
-        You’re Not My Favourite Because of Something You Did...<br>
-        You’re My Favourite Because of Who You Are.
-      </div>
-    </section>
+  <div class="point">
+    <strong>4. Your Presence</strong><br>
+    Even when you don't say anything,<br/>
+    your presence feels like comfort<br/>
+    like things will be okay
+  </div>
 
-    <!-- Emotional Message Section -->
-    <section class="emotional-section">
-      <p>
-        I don’t want to promise the whole world.<br>
-        I just want to be there—<br>your small moments,
-        your happy days,<br> your tired nights.
-        and all the simple times in between.<br>
-        I don't love just your smile, eyes, hair...
-        I love <strong>YOU</strong>.  
-        The real you.<br>
-        사랑해, 세상에서 가장 아름다운 여자야.🧿🌷🎀🌻
+  <div class="highlight-box">
+    You’re Not My Favourite Because of Something You Did...<br>
+    You’re My Favourite Because of Who You Are.
+  </div>
+</section>
+
+<!-- Emotional Message Section -->
+<section class="emotional-section">
+  <p>
+    I don’t want to promise the whole world.<br>
+    I just want to be there—<br>your small moments,
+    your happy days,<br> your tired nights.
+    and all the simple times in between.<br>
+    I don't love just your smile, eyes, hair...
+    I love <strong>YOU</strong>.  
+    The real you.<br>
+    사랑해, 세상에서 가장 아름다운 여자야.🧿🌷🎀🌻
+
 <br>
       <p>
         We argue, I still love you.
@@ -266,103 +136,118 @@ Like they speak a language only the heart understands.
         We have a bad day, I still love you.
         We are far apart, I still love you.<br>
         No matter what happens, my love for you willl never change, I wwill always choose you, stand by you, and love you with all my heart.
+  </p>
+        <h1>Girlfriend नाही
 
-      </p>
-            <h1>Girlfriend नाही
 माझ्या घरची लक्ष्मी hoshil ka?</h1>
-    </section>
+</section>
 
-    <!-- Poem Section -->
-    <section class="emotional-section">
-      <h3>A small Poem dedicate to you</h3>
-      <p>
-        काय देउ तुला मी
+
+<!-- Poem Section -->
+<section class="emotional-section">
+  <h3>A small Poem dedicate to you</h3>
+  <p>
+    काय देउ तुला मी
 
 प्रेमा शिवाय काहीच नाही
 माझ्याकडे
+
 
 काय सांगू तुला मी
 तुझ्या नामा शिवाय
 काही नाही माझ्या जिभावर
 
-तुझा सौंदर्याचा वर्णन करायला
-कुटला पण शब्द नाही माझ्याकडे
 
 तुझा सौंदर्याचा वर्णन करायला
 कुटला पण शब्द नाही माझ्याकडे
+
+
+तुझा सौंदर्याचा वर्णन करायला
+कुटला पण शब्द नाही माझ्याकडे
+
 
 जर तु माझ्या सोबत झालीस
 तर जिंकेंन मी सर्व गोष्ठी या जगावर
 
+
 जर तु माझ्या सोबत झालीस
-तर जिंकेंन मी सर्व गोष्टी या जगावर
+तर जिंकेंन मी सर्व गोष्ठी या जगावर
+
 
 तुझ्यासाथी
 एक उपहार ठेवला आहे मी
 
+
 तुझ्यासाथी
 एक उपहार ठेवला आहे मी
 
-उपहार मधे माझी राणी
-प्रेम जरा फार ठेवला आहे मी
 
 उपहार मधे माझी राणी
 प्रेम जरा फार ठेवला आहे मी
 
-तुला आवदेल तर न विचारता मिथित घेशील का मला
+
+उपहार मधे माझी राणी
+प्रेम जरा फार ठेवला आहे मी
+
 
 तुला आवदेल तर न विचारता मिथित घेशील का मला
 
+
+तुला आवदेल तर न विचारता मिथित घेशील का मला
+
+
 तु स्वास आहे या शरिराचे
 तु स्वास आहे या शरिराचे
+
 
 नाही नियंत्रण मला जीवावर
 जर तू माझ्यासोबत झाली
 तर मी जिंकेल सर्व गोष्टी या जगावर
-      </p>
-    </section>
+</p>
+</section>
 
-    <!-- Final Proposal Section -->
-    <section class="final-proposal">
-      <h2>Tu HAA kar le yarr samose ki kasam kabhi tere aankho me aansu nhi aane dungaa</h2>
-      Mala फक्त tu पाहिजे, ना tuzhya सारखी, ना tyjhyapeksha चांगली😌💟
 
-      <div class="stats">
-        <div class="stat-item">🎀 Rozana Golgappe Khilaunga</div>
-        <div class="stat-item">✨Gol Roti mein bana lunga bs tumsabji bana lena</div>
-        <div class="stat-item">😭Roz chugli karenge ristedaro ki</div>
-        <div class="stat-item">❤️I will never ignore you I will always there for you in every situation.</div>
-        <div class="stat-item">🌷And I really Ami tomake Miyauu Miyauu</div>
-        <div class="stat-item">🐱Ek toh itni sundar upar se chashma lagati ho</div>
-        <div class="stat-item">🥺Aap kitni pyaari ho yrr aapke liye bartan khushi khushi dho dungaa.</div>
-        <div class="stat-item">😁Tum 100 baar ruthogi, mai 200 baar manane aaunga</div>
-        <div class="stat-item">😁Loyal itna hu ji Reels dekhkar waqt gujar lunga but tumhare alawa kisi aur se baat nhi karunga</div>
-      </div><br>
+<!-- Final Proposal Section -->
+<section class="final-proposal">
+  <h2>Tu HAA kar le yarr samose ki kasam kabhi tere aankho me aansu nhi aane dungaa</h2>
+  Mala फक्त tu पाहिजे, ना tuzhya सारखी, ना tyjhyapeksha चांगली😌💟
 
-      <h2><b>사랑해, 세상에서 가장 아름다운 여자야.🧿🌷🎀🌻</b></h2>
-      
-      read again
+  <div class="stats">
+    <div class="stat-item">🎀 Rozana Golgappe Khilaunga</div>
+    <div class="stat-item">✨Gol Roti mein bana lunga bs tumsabji bana lena</div>
+    <div class="stat-item">😭Roz chugli karenge ristedaro ki</div>
+    <div class="stat-item">❤️I will never ignore you I will always there for you in every situation.</div>
+    <div class="stat-item">🌷And I really Ami tomake Miyauu Miyauu</div>
+    <div class="stat-item">🐱Ek toh itni sundar upar se chashma lagati ho</div>
+    <div class="stat-item">🥺Aap kitni pyaari ho yrr aapke liye bartan khushi khushi dho dungaa.</div>
+    <div class="stat-item">😁Tum 100 baar ruthogi, mai 200 baar manane aaunga</div>
+    <div class="stat-item">😁Loyal itna hu ji Reels dekhkar waqt gujar lunga but tumhare alawa kisi aur se baat nhi karunga</div>
+  </div><br>
 
-      <br><br>
-
-      <!-- FORM to send answer -->
-      <form id="answerForm" action="save.php" method="POST">
-          <input type="hidden" name="answer" id="answerInput">
-     
-
-      <div class="container">
-          <h2>What is your answer?</h2>
-
-          <button class="btn" onclick="sendAnswer('Yes 😌')">A) Yes 😌</button>
-          <button class="btn" onclick="sendAnswer('Of Course')">B) Of Course</button>
-          <button class="btn" onclick="sendAnswer('Option A😂')">C) Option A</button>
-          <button class="btn" onclick="sendAnswer('All of These😂')">D) All of These😂</button>
-      </div>
-       </form>
-      <br>
-<p>Maybe I'm too late to be your first buttttt I'm ready to be your last<<<3 </p>
+  <h2><b>사랑해, 세상에서 가장 아름다운 여자야.🧿🌷🎀🌻</b></h2>
   
-    </section>
+  read again
+
+  <br><br>
+
+  <!-- FORM to send answer -->
+  <form id="answerForm" action="save.php" method="POST">
+      <input type="hidden" name="answer" id="answerInput">
+ 
+
+  <div class="container">
+      <h2>What is your answer?</h2>
+
+      <button class="btn" onclick="sendAnswer('Yes 😌')">A) Yes 😌</button>
+      <button class="btn" onclick="sendAnswer('Of Course')">B) Of Course</button>
+      <button class="btn" onclick="sendAnswer('Option A😂')">C) Option A</button>
+      <button class="btn" onclick="sendAnswer('All of These😂')">D) All of These😂</button>
+  </div>
+   </form>
+  <br>
+
+<p>Maybe I'm too late to be your first buttttt I'm ready to be your last<<<3 </p>
+</section>
 
   </main>
 <!-- SweetAlert -->
@@ -371,39 +256,28 @@ Like they speak a language only the heart understands.
 function sendAnswer(value) {
     // Save answer in hidden input
     document.getElementById("answerInput").value = value;
-
-    // Show sweet popup
-    Swal.fire({
-        title: "Awww ❤️",
-        text: "Your answer made my day!",
-        icon: "success",
-        confirmButtonText: "Okay 💖",
-        confirmButtonColor: "#ff4d7e",
-        background: "#fff0f6",
-        color: "#ff4d7e"
-    }).then(() => {
-        // After OK → Submit form
-        document.getElementById("answerForm").submit();
-    });
-}
-
-// Intersection Observer for cinematic fade-in on scroll
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    }
-  });
-}, { threshold: 0.1 });
-
-sections.forEach(section => {
-  observer.observe(section);
+// Show sweet popup
+Swal.fire({
+    title: "Awww ❤️",
+    text: "Your answer made my day!",
+    icon: "success",
+    confirmButtonText: "Okay 💖",
+    confirmButtonColor: "#ff4d7e",
+    background: "#fff0f6",
+    color: "#ff4d7e"
+}).then(() => {
+    // After OK → Submit form
+    document.getElementById("answerForm").submit();
 });
-  </script>
+
+}
+</script>
+
+
   <!-- SweetAlert2 CDN -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <br><br><br>
-</body>
 
+
+</body>
 </html>
