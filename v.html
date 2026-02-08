@@ -1,3 +1,5 @@
+
+You said:
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -238,10 +240,11 @@ Like they speak a language only the heart understands.
   <div class="container">
       <h2>What is your answer?</h2>
 
-      <button class="btn" onclick="sendAnswer('Yes 😌')">A) Yes 😌</button>
-      <button class="btn" onclick="sendAnswer('Of Course')">B) Of Course</button>
-      <button class="btn" onclick="sendAnswer('Option A😂')">C) Option A</button>
-      <button class="btn" onclick="sendAnswer('All of These😂')">D) All of These😂</button>
+<button type="button" class="btn" onclick="sendAnswer('Yes 😌')">A) Yes 😌</button>
+<button type="button" class="btn" onclick="sendAnswer('Of Course')">B) Of Course</button>
+<button type="button" class="btn" onclick="sendAnswer('Option A😂')">C) Option A</button>
+<button type="button" class="btn" onclick="sendAnswer('All of These😂')">D) All of These😂</button>
+
   </div>
    </form>
   <br>
@@ -251,27 +254,27 @@ Like they speak a language only the heart understands.
 
   </main>
 <!-- SweetAlert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
+<script>
 function sendAnswer(value) {
-    // Save answer in hidden input
-    document.getElementById("answerInput").value = value;
-// Show sweet popup
-Swal.fire({
-    title: "Awww ❤️",
-    text: "Your answer made my day!",
-    icon: "success",
-    confirmButtonText: "Okay 💖",
-    confirmButtonColor: "#ff4d7e",
-    background: "#fff0f6",
-    color: "#ff4d7e"
-}).then(() => {
-    // After OK → Submit form
-    document.getElementById("answerForm").submit();
-});
 
+    // hidden input me answer set (future use ke liye)
+    document.getElementById("answerInput").value = value;
+
+    // SweetAlert popup
+    Swal.fire({
+        title: "Awww ❤️",
+        text: "Your answer made my day!",
+        icon: "success",
+        confirmButtonText: "Okay 💖",
+        confirmButtonColor: "#ff4d7e",
+        background: "#fff0f6",
+        color: "#ff4d7e"
+    });
+    
+    // ❌ form submit hata diya
 }
 </script>
+
 
 
   <!-- SweetAlert2 CDN -->
