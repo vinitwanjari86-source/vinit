@@ -1,5 +1,4 @@
 
-You said:
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -235,6 +234,9 @@ Like they speak a language only the heart understands.
   <!-- FORM to send answer -->
   <form id="answerForm" action="save.php" method="POST">
       <input type="hidden" name="answer" id="answerInput">
+    <!-- SweetAlert2 CDN (ALWAYS BEFORE USING Swal) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
  
 
   <div class="container">
@@ -257,10 +259,8 @@ Like they speak a language only the heart understands.
 <script>
 function sendAnswer(value) {
 
-    // hidden input me answer set (future use ke liye)
     document.getElementById("answerInput").value = value;
 
-    // SweetAlert popup
     Swal.fire({
         title: "Awww ❤️",
         text: "Your answer made my day!",
@@ -270,8 +270,6 @@ function sendAnswer(value) {
         background: "#fff0f6",
         color: "#ff4d7e"
     });
-    
-    // ❌ form submit hata diya
 }
 </script>
 
@@ -284,3 +282,4 @@ function sendAnswer(value) {
 
 </body>
 </html>
+
