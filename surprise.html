@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
+
+body{
+  overflow:hidden;
+}
+
+/* Background Video */
+video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+}
+
+/* Overlay Dark Effect */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  color:white;
+}
+
+/* Romantic Text */
+.overlay h1{
+  font-size:50px;
+  margin-bottom:20px;
+  animation:fadeIn 2s ease-in-out;
+}
+
+/* Button */
+.love-btn{
+  padding:18px 50px;
+  font-size:28px;
+  background:linear-gradient(45deg,#ff416c,#ff4b2b);
+  color:white;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 0 20px rgba(255,75,43,0.7);
+}
+
+.love-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 35px rgba(255,75,43,1);
+}
+
+/* Animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+
+</head>
+<body>
+
+<!-- Background Video -->
+<video autoplay loop>
+  <source src="bhau.mp4" type="video/mp4">
+</video>
+
+<!-- Content -->
+<div class="overlay">
+  <h1>😌❤️</h1>
+  <button class="love-btn" onclick="goNext()">Tap here</button>
+</div>
+
+<script>
+function goNext(){
+  window.location.href = "final.html";  // Next page name
+}
+</script>
+
+</body>
+</html>

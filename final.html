@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>तू आहेस म्हणून… ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  height:100vh;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+}
+
+/* Cinematic Black Fade */
+.fade-screen{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  z-index:10;
+  animation:fadeOut 3s forwards;
+}
+
+@keyframes fadeOut{
+  0%{opacity:1;}
+  100%{opacity:0; visibility:hidden;}
+}
+
+/* Container */
+.container{
+  text-align:center;
+  width:85%;
+  max-width:800px;
+  z-index:2;
+}
+
+h1{
+  font-size:40px;
+  margin-bottom:30px;
+  color:#ff9ecf;
+}
+
+.line{
+  font-size:22px;
+  margin:12px 0;
+  min-height:30px;
+}
+
+/* Falling Petals */
+.petal{
+  position:fixed;
+  top:-10px;
+  font-size:24px;
+  animation:fall linear infinite;
+  opacity:0.8;
+}
+
+@keyframes fall{
+  0%{
+    transform:translateY(-10px) translateX(0);
+  }
+  100%{
+    transform:translateY(110vh) translateX(100px);
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="fade-screen"></div>
+
+<div class="container">
+  <h1>“माझं स्वता:चा आस म्हनन आहे...…”</h1>
+  <div id="poem"></div>
+</div>
+
+<script>
+
+/* Poem Lines */
+const poemLines = [
+"तुझ्या डोळ्यांत चांदण्यांची शपथ दडलेली,",
+"तुझ्या हसण्यात सकाळची किरणं खुललेली…",
+"तू समोर आलीस की वेळही थांबतो,",
+"कारण माझं संपूर्ण जग तुझ्यातच हरवतो…",
+"तुझ्या केसांत वाऱ्याची साज चांदणी,",
+"तुझ्या गालांवरती लाजेची गुलाबी पावणी…",
+"तुझ्या चालण्यात एक अलगच अदा आहे,",
+"जणू स्वर्गाने घडवलेली तूच एक कविता आहेस…",
+"तुझ्या शब्दांत गोडवा साखरेहून गोड,",
+"तुझ्या स्वभावात प्रेमाचा अथांग ओघ…",
+"तू रुसलीस तरी सुंदर दिसतेस,",
+"हसलीस की फुलंही तुला पाहून लाजतात खास…",
+"माझ्या प्रत्येक स्वप्नात तूच असतेस,",
+"माझ्या प्रत्येक प्रार्थनेत तुझंच नाव असतं…",
+"देवाने दिलेली सर्वात सुंदर भेट म्हणजे तू,",
+"आणि म्हणूनच मनापासून सांगतो —",
+"मी तुला खूप प्रेम करतो…",
+"आज, उद्या आणि आयुष्यभर फक्त तुझ्यावरच करतो… ❤️"
+];
+
+const container = document.getElementById("poem");
+
+/* Typing Animation */
+function typeLine(text, index, callback){
+  let lineDiv = document.createElement("div");
+  lineDiv.className = "line";
+  container.appendChild(lineDiv);
+
+  let i = 0;
+  function typing(){
+    if(i < text.length){
+      lineDiv.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 40);
+    } else{
+      if(callback) setTimeout(callback, 800);
+    }
+  }
+  typing();
+}
+
+function startTyping(i){
+  if(i < poemLines.length){
+    typeLine(poemLines[i], i, () => startTyping(i+1));
+  }
+}
+
+/* Start after fade */
+setTimeout(()=>{
+  startTyping(0);
+},3000);
+
+/* Falling Petals Generator */
+function createPetal(){
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+  petal.innerHTML = "🌸";
+
+  petal.style.left = Math.random()*100 + "vw";
+  petal.style.animationDuration = (5 + Math.random()*5) + "s";
+  petal.style.fontSize = (18 + Math.random()*20) + "px";
+
+  document.body.appendChild(petal);
+
+  setTimeout(()=>{
+    petal.remove();
+  },10000);
+}
+
+setInterval(createPetal, 400);
+
+</script>
+
+</body>
+</html>

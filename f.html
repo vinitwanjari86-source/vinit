@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Proposal - For You</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:black;
+  color:white;
+  overflow:hidden;
+}
+
+/* ===== SLIDES ===== */
+.slide{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  opacity:0;
+  transform:scale(1.05);
+  transition:opacity 1.5s ease, transform 1.5s ease;
+}
+
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+  z-index:1;
+}
+
+.content{
+  max-width:900px;
+  text-align:center;
+}
+
+/* ===== BACKGROUND ===== */
+#bgCanvas{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+}
+
+#hearts-container span{
+  position:fixed;
+  bottom:-20px;
+  animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-120vh);opacity:0;}
+}
+
+img{
+  max-width:260px;
+  border-radius:18px;
+  margin:20px 0;
+  box-shadow:0 0 40px rgba(255,105,180,.6);
+}
+
+h1,h2,h3{
+  color:#ff7eb3;
+  margin-bottom:20px;
+}
+
+p{
+  line-height:1.6;
+  opacity:.95;
+}
+
+.point,.highlight-box,.stat-item{
+  background:rgba(255,255,255,.07);
+  padding:15px;
+  border-radius:15px;
+  margin:12px 0;
+}
+
+.highlight-box{
+  background:rgba(255,105,180,.25);
+  font-weight:bold;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+
+.btn{
+  padding:15px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d7e;
+  color:white;
+  font-size:1rem;
+  margin:10px;
+}
+
+audio{display:none;}
+</style>
+</head>
+
+<body>
+
+<canvas id="bgCanvas"></canvas>
+<div id="hearts-container"></div>
+
+<audio src="song.mp3.mpeg" autoplay loop></audio>
+
+<!-- ================= SLIDES START ================= -->
+
+<div class="slide active">
+<div class="content">
+<img src="img1.jpeg">
+<h1>Your Presence Has Become My Favourite Place.<br>
+I don’t know how or when... but you became the most beautiful part of my life.</h1>
+<p>
+This isn’t a promise, it’s just the truth—<br>
+I admire you, the way you smile, the kindness in your eyes,<br>
+and the softness in the way you exist.
+</p>
+</div>
+</div>
+
+<div class="slide">
+<div class="content">
+<img src="b3.jpeg">
+<h2>Why You Mean So Much To Me</h2>
+<p>
+You may not realize it, but you have a way of making ordinary days feel special.<br>
+Your smile… your eyes… your voice ... the way you talk…<br>
+everything about you has a gentleness that I can’t ignore.<br><br>
+<strong>You matter to me. More than I ever expected.</strong>
+</p>
+</div>
+</div>
+
+<div class="slide">
+<div class="content">
+  <img src="img2.jpeg">
+<p>
+            Jevha Pahilyanda mi tula pahilan hota, to divas aaj hi mala agadi athavato.
+            Tya divashi me tujhya sundar dodhyanch kautuk kala hoto ani apan na frankfinn institute
+            madhe english cha kahi gosthinvar bolat hoto.<br>
+            Tu majhya shejari basali hotis… ani khar sagau tar, mala tula baghun tevhacha tujhyavara prem jhal hot.
+            Aaj Paryant mala kadat nahi ki majhya manatlya feelings tula kas sangu…
+            pratyekvedi me tula pahato tevha, mala phakta tula pahatach rahav vatay…<br>
+            he prem ahe ki pagalpan… mahit nahi,
+            pan je kahi ahe… te phakta tujhyasathich ahe.
+            Tujhyavar kelal prem aajvar kunavar hi kel nahi.
+            Tu majhya sobat rahili, tar ek divas aapn lagna hi karu…
+            Aani jeevnatil pratyek yashachi unchi 
+            tujhya hatat hath gheun pahu.<br>
+            Me khar sangto… me nehmi tujhya pathishi ubha rahin,
+            nehmi tujha satha dein, kay hi pn jhala tari phakta tulach nivden.<br>
+        Tuch ti aahes jila me prem karato…..❤️
+</p>
+
+</div>
+</div>
+
+<div class="slide">
+<div class="content">
+    <!-- Points Section -->
+    <section class="points-section">
+      <h2>What I Feel About You</h2>
+  <div class="point">
+    <strong>1. Your Smile</strong><br>
+    Your smile doesn’t just look good… it feels like peace.<br/>
+    A kind of happiness I never want to lose
+  </div>
+
+  <div class="point">
+    <strong>2. Your Eyes</strong><br>
+    There's Something in your eyes - soft, warm, and honest.<br/>
+
+Like they speak a language only the heart understands.
+</div>
+
+
+  <div class="point">
+    <strong>3. Your Nature</strong><br>
+    The way you treat people, the kindness you carry....<br/>
+    It's one of the biggest reasons why you became my favourite.
+  </div>
+
+  <div class="point">
+    <strong>4. Your Presence</strong><br>
+    Even when you don't say anything,<br/>
+    your presence feels like comfort<br/>
+    like things will be okay
+  </div>
+
+  <div class="highlight-box">
+    You’re Not My Favourite Because of Something You Did...<br>
+    You’re My Favourite Because of Who You Are.
+  </div>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="content">
+<!-- Emotional Message Section -->
+<section class="emotional-section">
+  <p>
+    I don’t want to promise the whole world.<br>
+    I just want to be there—<br>your small moments,
+    your happy days,<br> your tired nights.
+    and all the simple times in between.<br>
+    I don't love just your smile, eyes, hair...<br>
+    I love <strong>YOU</strong><br>.  
+    The real you.<br>
+    사랑해, 세상에서 가장 아름다운 여자야.🧿🌷🎀🌻
+
+<br>
+      <p>
+        We argue, I still love you.<br>
+        we disagree, I still love you.<br>
+        We have a bad day, I still love you.<br>
+        We are far apart, I still love you.<br>
+        No matter what happens, my love for you willl never change, <br>
+        I wwill always choose you, stand by you, and love you with all my heart.
+  </p><br>
+        <h1>Girlfriend नाही
+
+माझ्या घरची लक्ष्मी hoshil ka?</h1>
+</section>
+</div>
+</div>
+
+
+<div class="slide">
+<div class="content">
+    <h2>Tu HAA kar le yarr samose ki kasam kabhi tere aankho me aansu nhi aane dungaa</h2>
+    Mala फक्त tu पाहिजे, ना tuzhya सारखी, ना tyjhyapeksha चांगली😌💟
+
+    <div class="stat-item">🎀 Rozana Golgappe Khilaunga</div>
+    <div class="stat-item">✨ Gol Roti mein bana lunga bs tum sabji bana lena</div>
+    <div class="stat-item">😭 Roz chugli karenge ristedaro ki</div>
+    <div class="stat-item">❤️ I will never ignore you I will always there for you in every situation.</div>
+    <div class="stat-item">🌷 And I really Ami tomake Miyauu Miyauu</div>
+    <div class="stat-item">🐱 Ek toh itni sundar upar se chashma lagati ho</div>
+    <div class="stat-item">🥺 Aap itni pyaari ho yrr aapke liye bartan khushi khushi dho dungaa.</div>
+    <div class="stat-item">😁 Tum 100 baar ruthogi, mai 200 baar manane aaunga</div>
+    <div class="stat-item">😁 Loyal itna hu ki reels dekhkar waqt gujar lunga but tumhare alawa kisi aur se baat nahi</div>
+
+    <h2>What is your answer?</h2>
+    <button class="btn" onclick="sendAnswer('Yes 😌')">A) Yes 😌</button>
+    <button class="btn" onclick="sendAnswer('Of Course')">B) Of Course</button>
+    <button class="btn" onclick="sendAnswer('Option A😂')">C) Option A😂</button>
+    <button class="btn" onclick="sendAnswer('All of These😂')">D) All of These😂</button>
+
+    <p>Maybe I'm too late to be your first but ready to be your last &lt;&lt;&lt;&lt; 3</p>
+</div>
+</div>
+
+<!-- ================= SLIDES END ================= -->
+
+<script>
+/* ===== SLIDESHOW ===== */
+let slides=document.querySelectorAll('.slide');
+let index=0;
+
+setInterval(()=>{
+  slides[index].classList.remove('active');
+  index=(index+1)%slides.length;
+  slides[index].classList.add('active');
+},8000);
+
+/* ===== HEARTS ===== */
+setInterval(()=>{
+ let h=document.createElement("span");
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ document.getElementById("hearts-container").appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+},400);
+
+/* ===== CANVAS ===== */
+const c=document.getElementById("bgCanvas");
+const ctx=c.getContext("2d");
+c.width=innerWidth;c.height=innerHeight;
+let stars=Array.from({length:80},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*2}));
+(function anim(){
+ ctx.clearRect(0,0,c.width,c.height);
+ ctx.fillStyle="white";
+ stars.forEach(s=>{
+  ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();
+  s.y+=.2;if(s.y>c.height)s.y=0;
+ });
+ requestAnimationFrame(anim);
+})();
+
+function sendAnswer(v){
+ Swal.fire("Awww ❤️","Your answer made my day!","success");
+}
+</script>
+
+</body>
+</html>
