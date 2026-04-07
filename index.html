@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity | Bhumi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #080808;
+            --accent: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Cinematic Noise Overlay */
+        .noise {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 9999;
+            opacity: .04;
+            pointer-events: none;
+            background: url('https://media.giphy.com/media/oEI9uWUzn938w/giphy.gif');
+        }
+
+        /* Ambient Background Background */
+        .ambient-light {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #1a1a1a 0%, #080808 60%);
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 40px;
+        }
+
+        /* Artistic Title Styling */
+        .reveal-box {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .pre-title {
+            font-size: clamp(10px, 1vw, 14px);
+            letter-spacing: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            transform: translateY(100%);
+            animation: slideUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+.main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(60px, 12vw, 160px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1; /* 0.9 से कभी-कभी ऊपर का हिस्सा कट जाता है, 1 सुरक्षित है */
+    margin-left: -5px;
+    
+    /* Animation Properties */
+    display: block; /* ब्लॉक एलिमेंट होना ज़रूरी है ताकि ट्रांसफॉर्म सही काम करे */
+    transform: translateY(100%);
+    animation: slideUp 1.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+
+    /* Gradient & Clipping - Fixed Order */
+    background: linear-gradient(to bottom, #ffffff 20%, #666666 100%);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    
+    /* Text Fill - Transparent होना सबसे ज़रूरी है */
+    color: transparent; 
+    -webkit-text-fill-color: transparent;
+
+    /* रेंडरिंग फिक्स: कुछ ब्राउज़र्स में ग्रेडिएंट गायब हो जाता है अगर ये न हो */
+    backface-visibility: hidden;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+        .description {
+            margin-top: 40px;
+            max-width: 450px;
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 1.8;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            opacity: 0;
+            animation: fadeIn 2s ease 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Button - Boutique Style */
+        .cta-container {
+            margin-top: 60px;
+            opacity: 0;
+            animation: fadeIn 2s ease 1.5s forwards;
+        }
+
+        .premium-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .premium-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 30px;
+            height: 1px;
+            background: white;
+            transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .premium-btn:hover::after {
+            width: 100%;
+        }
+
+        /* Custom Designer Cursor */
+        .cursor-dot {
+            width: 6px; height: 6px;
+            background: white;
+            position: fixed;
+            border-radius: 50%;
+            z-index: 10000;
+            pointer-events: none;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-ring {
+            width: 40px; height: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: fixed;
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="noise"></div>
+    <div class="ambient-light" id="ambient"></div>
+    
+    <div class="cursor-dot" id="dot"></div>
+    <div class="cursor-ring" id="ring"></div>
+
+    <div class="container">
+        <div class="reveal-box">
+            <p class="pre-title">A Chapter of Forever</p>
+        </div>
+        <div class="reveal-box">
+            <h1 class="main-title">For Bhumi</h1>
+        </div>
+        
+        <p class="description">
+            In the quiet spaces between heartbeats, I found a story that only you can finish. Every frame of my life is better with you in it.
+        </p>
+
+        <div class="cta-container">
+            <button class="premium-btn" onclick="nextPage()">Enter the Essence</button>
+        </div>
+    </div>
+
+    <script>
+        // Smooth Cursor & Ambient Light
+        const dot = document.getElementById('dot');
+        const ring = document.getElementById('ring');
+        const ambient = document.getElementById('ambient');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            // Update Cursor
+            dot.style.left = x + 'px';
+            dot.style.top = y + 'px';
+            
+            ring.style.left = (x - 20) + 'px';
+            ring.style.top = (y - 20) + 'px';
+
+            // Update Ambient Background Light
+            const moveX = (x / window.innerWidth) * 100;
+            const moveY = (y / window.innerHeight) * 100;
+            ambient.style.setProperty('--x', moveX + '%');
+            ambient.style.setProperty('--y', moveY + '%');
+        });
+
+        // Hover Effect for Button
+        const btn = document.querySelector('.premium-btn');
+        btn.addEventListener('mouseenter', () => {
+            ring.style.transform = 'scale(1.5)';
+            ring.style.background = 'rgba(255,255,255,0.1)';
+        });
+        btn.addEventListener('mouseleave', () => {
+            ring.style.transform = 'scale(1)';
+            ring.style.background = 'none';
+        });
+
+        function nextPage() {
+            document.body.style.transition = "2s ease";
+            document.body.style.filter = "blur(20px)";
+            document.body.style.opacity = "0";
+            
+            setTimeout(() => {
+                window.location.href = "v.html";
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

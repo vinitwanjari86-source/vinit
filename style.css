@@ -1,0 +1,1032 @@
+/* Reset */
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+/* Body */
+html,body{
+width:100%;
+height:100%;
+overflow-x:hidden;
+font-family:'Georgia',serif;
+background:#F3DDC2;
+color:#618A7F;
+line-height:1.6;
+animation:bodyFade 1.2s ease forwards;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+border-radius:20px;
+padding:20px;
+animation:smoothImage 1.4s ease;
+}
+
+/* Container */
+.container{
+width:100%;
+margin:0;
+padding:0;
+text-align:center;
+background:#fff;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,0,100,0.2);
+}
+
+/* Hero Section */
+header{
+width:100%;
+min-height:100vh;
+background:#618A7F;
+color:#F3DDC2;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+border-radius:12px;
+margin-top:20px;
+}
+
+.hero-text{
+max-width:900px;
+margin-bottom:40px;
+}
+
+.hero-text h1{
+font-size:2.8rem;
+margin-bottom:15px;
+line-height:1.15;
+}
+
+.hero-text p{
+font-size:1.1rem;
+white-space:pre-line;
+}
+
+/* Romantic Slider */
+
+.romantic-slider{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:40px;
+}
+
+.slider{
+position:relative;
+width:100%;
+max-width:1000px;
+height:420px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.slide{
+position:absolute;
+transition:all 1s ease;
+opacity:0;
+transform:scale(0.6);
+}
+.slide img{
+width:420px;
+border-radius:45px;
+}
+
+/* Active center */
+.slide.active{
+opacity:1;
+transform:scale(1);
+z-index:5;
+}
+
+/* Side slides */
+.slide.left{
+transform:translateX(-420px) scale(0.75);
+opacity:0.6;
+}
+
+.slide.right{
+transform:translateX(420px) scale(0.75);
+opacity:0.6;
+}
+
+.slide.far-left{
+transform:translateX(-650px) scale(0.55);
+opacity:0.3;
+}
+
+.slide.far-right{
+transform:translateX(650px) scale(0.55);
+opacity:0.3;
+}
+/* About Section */
+
+.about-section{
+width:90%;
+margin:auto;
+padding:110px 20px;
+}
+
+.row{
+display:flex;
+align-items:flex-start;
+justify-content:center;
+gap:40px;
+margin-bottom:60px;
+flex-wrap:wrap;
+}
+
+.side-img{
+width:460px;
+height:440px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.text-block{
+max-width:500px;
+font-size:16px;
+line-height:1.7;
+}
+
+/* Points Section */
+
+.points-section{
+background:#618A7F;
+color:#F3DDC2;
+padding:40px 30px;
+border-radius:12px;
+margin-bottom:40px;
+}
+
+.points-section h2{
+font-size:2.2rem;
+margin-bottom:25px;
+}
+
+.point{
+background:#F3DDC2;
+color:#618A7F;
+padding:25px 30px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 3px 6px rgba(0,0,0,0.12);
+}
+
+.highlight-box{
+background:#F3DDC2;
+max-width:600px;
+padding:30px;
+border-radius:20px;
+font-weight:700;
+font-size:1.3rem;
+margin:30px auto 0;
+}
+
+/* Purane style ko override karne ke liye 'fixed' ya 'absolute' ki zaroorat nahi hai, 
+   bas sahi centering rules lagayein */
+
+.final-proposal {
+    width: 100vw;            /* Screen ki puri width */
+    min-height: 100vh;       /* Screen ki puri height */
+    background-color: #618A7F; /* Aapka green theme color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;      /* Taaki andar ke elements iske andar rahen */
+}
+
+/* Heading ko thoda contrast dene ke liye */
+.final-proposal h2 {
+    color: #F3DDC2;
+    margin-bottom: 20px;
+}
+
+/* Card stack ko container ke beech mein rakhne ke liye */
+.card-stack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.stats{
+margin-top:25px;
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.stat-item{
+background:#618A7F;
+padding:15px 25px;
+border-radius:12px;
+min-width:180px;
+color:#F3DDC2;
+box-shadow:0 4px 6px rgba(0,0,0,0.25);
+}
+
+/* Buttons */
+
+button,.btn{
+transition:all .3s ease;
+}
+
+button:hover,.btn:hover{
+transform:translateY(-3px);
+}
+
+/* Love Button */
+
+.love-btn{
+margin-top:40px;
+padding:20px 50px;
+background:linear-gradient(45deg,#ff416c,#ff4b2b);
+color:white;
+border:none;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,75,43,0.7);
+}
+
+.love-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 35px rgba(255,75,43,1);
+}
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+bottom:-20px;
+color:#ff4e8a;
+font-size:20px;
+animation:floatUp 6s linear infinite;
+opacity:.7;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0) scale(1);opacity:.8;}
+100%{transform:translateY(-120vh) scale(1.4);opacity:0;}
+}
+
+/* Background canvas */
+
+#bgCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-10;
+background:#000;
+}
+
+/* Animations */
+
+@keyframes bodyFade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes smoothImage{
+from{opacity:0;transform:scale(1.05);}
+to{opacity:1;transform:scale(1);}
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+.slider{
+height:320px;
+}
+
+.slide img{
+width:280px;
+}
+
+.row{
+flex-direction:column;
+align-items:center;
+}
+
+.side-img{
+width:100%;
+height:auto;
+}
+
+}
+
+.point-row{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+margin:40px 0;
+flex-wrap:wrap;
+}
+
+.point-text{
+flex:1;
+background:#F3DDC2;
+color:#618A7F;
+padding:25px 30px;
+border-radius:15px;
+box-shadow:0 3px 6px rgba(0,0,0,0.12);
+font-size:1.1rem;
+}
+
+.point-text strong{
+font-size:1.4rem;
+display:block;
+margin-bottom:8px;
+}
+
+.point-img{
+width:320px;
+height:320px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Reveal Animation Styles */
+.reveal-container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.dynamic-reveal-text {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: white;
+    height: 40px; /* To prevent jumping */
+}
+
+.reveal-card {
+    background: #fff;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.reveal-sidebar {
+    width: 40%;
+    background: #5f0a87;
+    color: white;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reveal-brand { font-size: 0.8rem; opacity: 0.8; margin-bottom: 20px; }
+
+.reveal-item {
+    padding: 15px;
+    margin: 5px 0;
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 8px;
+}
+
+.reveal-item.active {
+    background: #fff;
+    color: #5f0a87;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+.reveal-display {
+    width: 60%;
+    background: #fdf2f8;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reveal-nav-arrows { position: absolute; top: 20px; left: 20px; color: #333; font-size: 1.2rem; }
+
+.reveal-image-container img {
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.reveal-number-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 10rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.05);
+    line-height: 1;
+}
+
+/* Bada Container Size */
+.reveal-card {
+    background: #fff;
+    display: flex;
+    border-radius: 25px; /* Thoda aur rounded */
+    overflow: hidden;
+    max-width: 1000px;  /* Pehle 800px tha, ab 1000px kar diya */
+    margin: 20px auto;
+    height: 550px;      /* Pehle 400px tha, ab height badha di */
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Left Panel (Menu) ki width aur font size */
+.reveal-sidebar {
+    width: 35%;
+    background: #5f0a87;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reveal-item {
+    padding: 20px;      /* Padding badha di */
+    margin: 10px 0;
+    font-size: 1.2rem;  /* Text thoda bada kar diya */
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+/* Right Panel (Image Area) */
+.reveal-display {
+    width: 65%;
+    background: #fdf2f8;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image ka size bada karne ke liye */
+.reveal-image-container img {
+    width: 400px;       /* Pehle 250px tha */
+    height: 400px;      /* Pehle 250px tha */
+    border-radius: 30%;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Piche wala bada number */
+.reveal-number-overlay {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    font-size: 20rem;   /* Number ka size bhi bada kar diya */
+    font-weight: 1200;
+    color: rgba(0,0,0,0.04);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.reveal-image-container img {
+    /* ... baki purana code ... */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Optimized Reveal Styles --- */
+
+.reveal-container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.dynamic-reveal-text {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: white;
+    height: 40px;
+}
+
+.reveal-card {
+    background: #fff;
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 20px auto;
+    height: 550px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.reveal-sidebar {
+    width: 35%;
+    background: #5f0a87;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reveal-menu {
+    max-height: 300px; /* Menu ki height limit */
+    overflow-y: auto;  /* Yahan scroll aayega */
+    padding-right: 10px;
+}
+
+/* Scrollbar design for Sidebar */
+.reveal-menu::-webkit-scrollbar { width: 6px; }
+.reveal-menu::-webkit-scrollbar-thumb { background: #ff4d7e; border-radius: 10px; }
+
+.reveal-item {
+    padding: 20px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.reveal-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    padding-left: 30px;
+}
+
+.reveal-item.active {
+    background: #fff;
+    color: #5f0a87;
+    font-weight: bold;
+    transform: scale(1.02);
+}
+
+.reveal-display {
+    width: 65%;
+    background: #fdf2f8;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reveal-image-container img {
+    width: 400px;
+    height: 400px;
+    border-radius: 30%;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-number-overlay {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    font-size: 15rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.04);
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Highlight Box Styling */
+.highlight-box {
+    background: rgba(255, 255, 255, 0.9); /* Halka transparent white */
+    border: 2px solid #bb94eb;           /* Pink border */
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 40px auto;
+    text-align: center;
+    color: #5f0a87;                      /* Dark purple text */
+    box-shadow: 0 10px 30px rgba(255, 77, 126, 0.2); /* Soft shadow */
+    line-height: 1.4;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for a nice touch */
+.highlight-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 253, 254, 0.3);
+}
+
+/* Decorative touch: adding a small heart or icon inside via CSS */
+.highlight-box::before {
+    content: "❤️";
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.card-stack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh; /* Scroll space ke liye */
+}
+
+/* Container ka background color */
+.card-stack {
+  position: relative;
+  background-color: #618A7F;
+  padding: 50px 0; /* Container ki height control karne ke liye padding ka use karein */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Tede-mede effect ke liye (odd/even) */
+.card:nth-child(even) { transform: rotate(-3deg); }
+.card:nth-child(odd) { transform: rotate(3deg); }
+
+/* Scroll karte waqt seedha karne ke liye (Optional JS effect) */
+.card:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+body, html { margin: 0; padding: 0; height: 100%; }
+
+.main-container {
+  background-color: #618A7F;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 50px;
+}
+
+/* FINAL PROPOSAL FULL SCREEN */
+
+.final-proposal{
+width:100%;
+min-height:100vh;
+background:#618A7F;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+padding:60px 20px;
+overflow:hidden;
+}
+
+
+/* CARD STACK */
+
+.card-stack{
+
+position:relative;
+width:900px;
+height:420px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+
+/* CARD */
+
+.card{
+
+position:absolute;
+
+width:320px;
+height:380px;
+
+background:white;
+
+border-radius:25px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:25px;
+
+text-align:center;
+
+font-size:18px;
+font-weight:600;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+
+transition:all 1s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* CENTER CARD */
+
+.card.active{
+
+transform:scale(1.1);
+z-index:5;
+
+}
+
+
+/* LEFT CARD */
+
+.card.left{
+
+transform:translateX(-350px) scale(1.55);
+opacity:1.7;
+z-index:3;
+
+}
+
+
+/* RIGHT CARD */
+
+.card.right{
+
+transform:translateX(350px) scale(1.55);
+opacity:1.7;
+z-index:3;
+
+}
+
+
+/* HIDDEN BACK CARDS */
+
+.card.back{
+
+transform:translateY(200px) scale(.7);
+opacity:0;
+
+}
+
+/* ANSWER SECTION */
+
+.answer-box{
+
+margin-top:40px;
+padding:40px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+
+text-align:center;
+
+max-width:600px;
+
+}
+
+
+/* BUTTON AREA */
+
+.answer-buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+/* BUTTON STYLE */
+
+.answer-buttons button{
+
+padding:14px 28px;
+
+border:none;
+
+border-radius:40px;
+
+background:linear-gradient(45deg,#ff416c,#ff4b2b);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.3s;
+
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+
+}
+
+
+/* BUTTON HOVER */
+
+.answer-buttons button:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 15px 30px rgba(0,0,0,0.3);
+
+}
+
+
+/* FINAL TEXT */
+
+.final-line{
+
+margin-top:40px;
+
+font-size:18px;
+
+color:white;
+
+text-align:center;
+
+}
+
+
+/* Sprite and Common Assets */
+.mo-sprite, .mo-boy, .mo-girl, .mo-mo, .mo-wheel1, .mo-wheel2 {
+  background-image: url('data:image/png;base64,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');
+  background-repeat: no-repeat;
+  background-size: 75px;
+  position: absolute;
+}
+
+.mo-boy {
+  background-position: 0 0;
+  height: calc(136px / 2);
+  width: calc(64px / 2);
+  top: -34px;
+  left: 28px;
+  z-index: 4;
+}
+
+.mo-girl {
+  background-position: 0 -69px;
+  height: calc(140px / 2);
+  width: calc(60px / 2);
+  top: -37px;
+  left: 7px;
+  z-index: 5;
+}
+
+.mo-mo {
+  background-position: 0 calc(-277px / 2);
+  height: 40px;
+  width: calc(150px / 2);
+  z-index: 3;
+}
+
+.mo-wheel1, .mo-wheel2 {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAMAAACfvvDEAAAAolBMVEUAAABXV1dYWFdzcnJeXl5YT0jMioKzs7NXV1ZVVFRVWFuxs7W4uLjKysrBwcGYmJjHx8e1tbWztLZURz5hT05lZWWIiYpYV1ZWWlyysrKqqqpTUlFcVVNvVVd1foSmpqaysrLlz79cW1tWRjrWw7dTU1LPkJWurq7o1MTnxqyOlZmgn55xfIRYWFi3t7bAwMDIx8fPz89nZWWwsLClpaWJg357zrwbAAAALXRSTlMA7N3T8D8Fzslzozbx6dHDqKheLgrjxbCF7L6RIBLQzJR1YkojtxF7RRr88bQnG7tbAAACKElEQVQ4y51U23biMAx0HEgCuRBCCfeWQrl0d5Gcbfv/v1bFsp3QQHtO5wmRsaSRxxK/xUN/PoykjA6r3fo7Xn94aSEabO7xossXePOHW3UpXxey3yFO5OU25l8re823qe/7vSYcBlcZLbFXhqiRLH1HbRHXnuGNElSVhlIYWu6gYR74H38BqNL8mZBnCgFGhupk7Th+TACSQhi85gDwxP3KwMzH44xASF6ExRhq6lX9ASteQI3QKi2AYBvw+AZ4kk+ACIQTE4/1QUQElrXTozS1keRyfVub5qBM/YMgrGzKc15pwTPvIv+9EbFKzznCVH+vy0d6kgnk1Fuq8IM1/H9TVX4UMcLIDcoKL+ru8ncKmJqeBSGB0Kpf6x8jgFjU4AE6ESKEREcrunLLJCUcGcysMn14aKUvAV4FYd+yvGVOzbkJM3/M6fpE7jNofDowfaLtM2B3oNYebP847aE+uoCMz7l5IoyFiOkK7TzfAbaBeAFc8jzdHYVUfgsE/EtHPZ/tEo8BfXdHfS6vEDRRxSKgd54jcMzFDy0vZcjEZ2Pk1MTOS40/9SfMnD9RE5dtf254MqWuH7c9jyrrOeWclKmVwoVjHreAlSFKu3SCyDy5lLjZ9lQUxYlEqyo0ful333tYv3MNpaq0bBZOd4dMl2nFyEq3Q+7tpeljOSr97l76eddZosNmdovn7cUN7LtpV/f29/4qr5yvxX1s9vNZJKWMhoOJ+C0+AdXqoY5UD8svAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+
+.mo-wheel1 {
+  height: 21px;
+  width: 21px;
+  top: 26px;
+  left: 54px;
+  z-index: -2;
+  animation: rotate 1s linear infinite;
+}
+
+.mo-wheel2 {
+  height: 21px;
+  width: 21px;
+  top: 26px;
+  left: 0px;
+  z-index: -2;
+  animation: rotate 1s linear infinite;
+}
+
+.motor_shadow {
+  display: block;
+  height: 8px;
+  width: 80px;
+  position: absolute;
+  bottom: -12px;
+  left: -2px;
+  background: #000000;
+  border-radius: 80px / 8px;
+  opacity: .3;
+  z-index: 1;
+  animation: a_motor_hook 1s linear infinite alternate;
+}
+
+.smoke {
+  display: block;
+  height: 8px;
+  width: 8px;
+  background: #9A9A9A;
+  border-radius: 8px;
+  position: absolute;
+  left: -10px;
+  top: 34px;
+  opacity: 0;
+}
+
+.smoke_1 {
+  animation: a_smoke 1s 0.1s linear infinite;
+}
+
+.smoke_2 {
+  animation: a_smoke 1s 0.5s linear infinite;
+}
+
+/* --- STANDARD KEYFRAMES (Modern Browsers) --- */
+
+@keyframes a_motor_hook {
+  0%   { transform: scale(1, 1); }
+  50%  { transform: scale(1.1, 1); }
+  100% { transform: scale(1, 1); }
+}
+
+@keyframes a_smoke {
+  0%   { transform: scale(0.5) translate(0, 0); opacity: 0; }
+  25%  { transform: translate(-6px, 0px); opacity: 1; }
+  50%  { transform: translate(-12px, -4px); opacity: 1; }
+  75%  { transform: translate(-18px, -12px); opacity: 0.5; }
+  100% { transform: scale(1) translate(-22px, -16px); opacity: 0; }
+}
+
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- WEBKIT PREFIXES (Backward Compatibility) --- */
+@-webkit-keyframes a_motor_hook {
+  0%   { -webkit-transform: scale(1, 1); }
+  50%  { -webkit-transform: scale(1.1, 1); }
+  100% { -webkit-transform: scale(1, 1); }
+}
+
+@-webkit-keyframes a_smoke {
+  0%   { -webkit-transform: scale(0.5) translate(0, 0); opacity: 0; }
+  25%  { -webkit-transform: translate(-6px, 0px); opacity: 1; }
+  50%  { -webkit-transform: translate(-12px, -4px); opacity: 1; }
+  75%  { -webkit-transform: translate(-18px, -12px); opacity: 0.5; }
+  100% { -webkit-transform: scale(1) translate(-22px, -16px); opacity: 0; }
+}
+
+@-webkit-keyframes rotate {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
